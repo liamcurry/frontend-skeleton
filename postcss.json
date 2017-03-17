@@ -1,0 +1,14 @@
+{
+    "use": [
+        "postcss-import",
+        "cssnano"
+    ],
+    "postcss-import": {
+      "path": [
+        "build/client"
+      ]
+    },
+    "cssnano": {
+        "autoprefixer": true
+    }
+}

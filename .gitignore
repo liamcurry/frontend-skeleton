@@ -1,0 +1,20 @@
+# Dependencies/build artifacts
+elm-stuff
+node_modules
+
+# Private environment variables
+env/beta.sh
+env/prod.sh
+
+# Keep these directories but nothing inside them
+build/*
+dist/*
+!build/.gitkeep
+!dist/.gitkeep
+
+# SSL keys
+*.pem
+
+# Misc stuff
+.DS_Store
+npm-debug.log*

@@ -1,0 +1,3 @@
+export BASE_URL := https://liamcurry.com/frontend-skeleton/
+export GOOGLE_ANALYTICS_KEY := UA-XXXXX-Y
+export GOOGLE_WEBMASTER_KEY := xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
