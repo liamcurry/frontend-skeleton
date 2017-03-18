@@ -1,46 +1,41 @@
-module Style.Text exposing (..)
+module Style.Text
+    exposing
+        ( left
+        , center
+        , right
+        , upper
+        , lower
+        , noSelect
+        )
 
 import Css exposing (..)
-import Css.Elements exposing (..)
-import Style exposing (Class(..))
 
 
-css : List Snippet
-css =
-    [ class TextLeft [ textLeft ]
-    , class TextCenter [ textCenter ]
-    , class TextRight [ textRight ]
-    , class TextUpper [ textUpper ]
-    , class TextLower [ textLower ]
-    , class TextNoSelect [ textNoSelect ]
-    ]
-
-
-textLeft : Mixin
-textLeft =
+left : Mixin
+left =
     textAlign Css.left
 
 
-textCenter : Mixin
-textCenter =
+center : Mixin
+center =
     textAlign Css.center
 
 
-textRight : Mixin
-textRight =
+right : Mixin
+right =
     textAlign Css.right
 
 
-textUpper : Mixin
-textUpper =
+upper : Mixin
+upper =
     textTransform uppercase
 
 
-textLower : Mixin
-textLower =
+lower : Mixin
+lower =
     textTransform lowercase
 
 
-textNoSelect : Mixin
-textNoSelect =
+noSelect : Mixin
+noSelect =
     property "user-select" "none"

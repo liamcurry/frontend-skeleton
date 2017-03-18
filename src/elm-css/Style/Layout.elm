@@ -1,40 +1,22 @@
-module Style.Layout exposing (..)
+module Style.Layout
+    exposing
+        ( block
+        , row
+        , rowReverse
+        , col
+        , colReverse
+        , flex
+        , alignCenter
+        , justifyCenter
+        , justifyContent
+        )
 
 import Css exposing (..)
-import Css.Elements exposing (html, body)
-import Style exposing (Class(..))
 
 
-css : List Snippet
-css =
-    [ everything
-        [ margin zero
-        , padding zero
-        , boxSizing borderBox
-        ]
-    , Css.each [ html, body ] [ height <| pct 100 ]
-    , body [ layout, col ]
-    , class Row [ layout, row ]
-    , class RowReverse [ layout, rowReverse ]
-    , class Col [ layout, col ]
-    , class ColReverse [ layout, colReverse ]
-    , class EqualChildren [ children [ everything [ flex 1 ] ] ]
-    , class Flex1 [ flex 1 ]
-    , class Flex2 [ flex 2 ]
-    , class Flex3 [ flex 3 ]
-    , class Flex4 [ flex 4 ]
-    , class Flex5 [ flex 5 ]
-    , class Flex6 [ flex 6 ]
-    , class Flex7 [ flex 7 ]
-    , class Flex8 [ flex 8 ]
-    , class Flex9 [ flex 9 ]
-    , class Flex10 [ flex 10 ]
-    , class Flex11 [ flex 11 ]
-    , class Flex12 [ flex 12 ]
-    , class AlignCenter [ alignCenter ]
-    , class JustifyCenter [ justifyCenter ]
-    , class JustifyBetween [ justifyBetween ]
-    ]
+block : Mixin
+block =
+    display Css.block
 
 
 layout : Mixin

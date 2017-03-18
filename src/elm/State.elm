@@ -1,9 +1,12 @@
-module State exposing (..)
+port module State exposing (..)
 
 import Json.Decode as Decode
 import Model exposing (Model, emptyModel, Msg(..))
 import Navigation
 import Route
+
+
+port setStored : Decode.Value -> Cmd msg
 
 
 init : Decode.Value -> Navigation.Location -> ( Model, Cmd Msg )

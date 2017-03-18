@@ -1,62 +1,60 @@
-module Style.Font exposing (..)
+module Style.Font
+    exposing
+        ( head
+        , body
+        , mono
+        , xl
+        , lg
+        , md
+        , sm
+        , xs
+        , bold
+        )
 
 import Css exposing (..)
-import Css.Elements exposing (..)
-import Style exposing (Class(..))
-import Style.Config exposing (Config)
+import Style exposing (Config)
 
 
-css : Config -> List Snippet
-css cfg =
-    [ body [ fontBody cfg ]
-    , each [ h1, h2, h3, h4, h5, h6 ] [ fontHead cfg ]
-    , code [ fontMono cfg ]
-    , class FontHead [ fontHead cfg ]
-    , class FontBody [ fontBody cfg ]
-    , class FontMono [ fontMono cfg ]
-    , class FontXl [ fontXl cfg ]
-    , class FontLg [ fontXl cfg ]
-    , class FontMd [ fontXl cfg ]
-    , class FontSm [ fontXl cfg ]
-    , class FontXs [ fontXl cfg ]
-    ]
-
-
-fontHead : Config -> Mixin
-fontHead cfg =
+head : Config -> Mixin
+head cfg =
     fontFamilies cfg.fontHead
 
 
-fontBody : Config -> Mixin
-fontBody cfg =
+body : Config -> Mixin
+body cfg =
     fontFamilies cfg.fontBody
 
 
-fontMono : Config -> Mixin
-fontMono cfg =
+mono : Config -> Mixin
+mono cfg =
     fontFamilies cfg.fontMono
 
 
-fontXl : Config -> Mixin
-fontXl cfg =
-    fontSize <| px <| cfg.fontSize * 1.5
+xl : Config -> Mixin
+xl cfg =
+    fontSize <| px <| cfg.fontXl
 
 
-fontLg : Config -> Mixin
-fontLg cfg =
-    fontSize <| px <| cfg.fontSize * 1.25
+lg : Config -> Mixin
+lg cfg =
+    fontSize <| px <| cfg.fontLg
 
 
-fontMd : Config -> Mixin
-fontMd cfg =
-    fontSize <| px <| cfg.fontSize * 1
+md : Config -> Mixin
+md cfg =
+    fontSize <| px <| cfg.fontMd
 
 
-fontSm : Config -> Mixin
-fontSm cfg =
-    fontSize <| px <| cfg.fontSize * 0.75
+sm : Config -> Mixin
+sm cfg =
+    fontSize <| px <| cfg.fontSm
 
 
-fontXs : Config -> Mixin
-fontXs cfg =
-    fontSize <| px <| cfg.fontSize * 0.5
+xs : Config -> Mixin
+xs cfg =
+    fontSize <| px <| cfg.fontXs
+
+
+bold : Mixin
+bold =
+    fontWeight <| int 600
